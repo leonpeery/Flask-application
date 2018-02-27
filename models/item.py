@@ -6,7 +6,7 @@ class ItemModel(db.Model):
     id = db.Column(db.Integer, primary_key=True)
     name = db.Column(db.String(80))
     description = db.Column(db.String(200))
-    productArea = db.Column(db.string(80))
+    productArea = db.Column(db.String(80))
     date = db.Column(db.String(80))
     priority = db.Column(db.Integer)
 
