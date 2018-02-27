@@ -6,9 +6,7 @@ from models.item import ItemModel
 class Item(Resource):
     parser = reqparse.RequestParser()
     parser.add_argument('description',
-        type=str,
-        required=True,
-        help="This field cannot be left blank."
+        type=str
     )
     parser.add_argument('store_id',
         type=int,
