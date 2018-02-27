@@ -5,7 +5,7 @@ from models.item import ItemModel
 
 class Item(Resource):
     parser = reqparse.RequestParser()
-    parser.add_argument('price',
+    parser.add_argument('description',
         type=float,
         required=True,
         help="This field cannot be left blank."
@@ -50,7 +50,7 @@ class Item(Resource):
         if item is None:
             item = ItemModel(name, **data)
         else: 
-            item.price = data['price']
+            item.description = data['description']
             item.store_id = data['store_id']
         item.save_to_db()
 
