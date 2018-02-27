@@ -8,6 +8,15 @@ class Item(Resource):
     parser.add_argument('description',
         type=str
     )
+    parser.add_argument('productArea',
+        type=str
+    )
+    parser.add_argument('date',
+        type=str
+    )
+    parser.add_argument('priority',
+        type=int
+    )
     parser.add_argument('store_id',
         type=int,
         required=True,
@@ -49,6 +58,9 @@ class Item(Resource):
             item = ItemModel(name, **data)
         else: 
             item.description = data['description']
+            item.productArea = data['productArea']
+            item.date = data['date']
+            item.priority = data['priority']
             item.store_id = data['store_id']
         item.save_to_db()
 
